@@ -17,7 +17,7 @@ function Home() {
               </div>
             </div>
   
-            <div className="flex justify-center ">
+            <div className="flex justify-center bg-black">
               {/* <img src={homeLogo} alt="" className='w-2/3' /> */}
       
             </div>
