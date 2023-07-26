@@ -3,7 +3,6 @@ import { useState, createContext, ReactNode } from 'react';
 interface UserContextType {
   nome: string;
   setNome: React.Dispatch<React.SetStateAction<string>>;
-
 }
 
 export const UserContext = createContext<UserContextType>({
@@ -17,7 +16,6 @@ interface UserProviderProps {
 
 function UserProvider({ children }: UserProviderProps) {
   const [nome, setNome] = useState('');
-
 
   return (
     <UserContext.Provider value={{ nome, setNome}}>
