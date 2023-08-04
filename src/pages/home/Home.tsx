@@ -5,7 +5,6 @@ import ListaPostagens from '../../components/postagens/listaPostagens/ListaPosta
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
 
-
 function Home() {
     return (
         <>
