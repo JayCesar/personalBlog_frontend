@@ -5,4 +5,14 @@
     width: 100%;
     background-size: cover;
     background-position: center;
-  }
+}
+
+.fundoLogin2 {
+    background-image: url(../../assets/login2.jpg);
+    background-repeat: no-repeat;
+
+
+    background-size: cover;
+    background-position: center;
+
+}
