@@ -19,6 +19,7 @@ import FormularioPostagem from './components/postagens/formularioPostagem/Formul
 
 import Perfil from './pages/perfil/Perfil';
 import DeletarPostagem from './components/postagens/deletarPostagem/deletarPostagem';
+import './App.css';
 
 function App() {
   
@@ -28,7 +29,7 @@ function App() {
       <ToastContainer />
         <BrowserRouter>
         <Navbar />
-          <div className='min-h-[80vh]'>
+          <div className='min-h-[100vh] dark:bg-black translate-all ease-in-out duration-300'>
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />

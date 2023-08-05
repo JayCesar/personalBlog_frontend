@@ -101,17 +101,16 @@ function Navbar() {
 
   if(usuario.token !== "") {
     navbarComponent = (
-      <header className="inset-x-0 top-0 z-50 bg-black dark:bg-white transition-all ease-in-out duration-600">
+      <header className="absolute inset-x-0 top-0 z-50 bg-black dark:bg-white transition-all ease-in-out duration-600">
         <nav className="flex items-center justify-between p-4 lg:px-20" aria-label="Global">
           <div className="flex lg:flex-1 lg:pl">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-22 w-auto"
-                src={jayLogo}
-                alt=""
-              />
-            </a>
+              <Link to='/home' className="-m-1.5 p-1.5"><span className="sr-only">Your Company</span>
+                <img
+                  className="h-22 w-auto"
+                  src={jayLogo}
+                  alt=""
+                />
+              </Link>
           </div>
           <div className="flex lg:hidden">
             <label className="mr-2 shadow-lg shadow-black-500/50 bg-white dark:bg-black w-[30px] h-[30px] flex justify-center items-center rounded-[50%] cursor-pointer" onClick={handleThemeSwitch}>
@@ -127,7 +126,8 @@ function Navbar() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12 lg:items-center w-[800px] justify-end">
+          <div className="hidden lg:flex lg:gap-x-8 lg:items-center w-[800px] justify-end">
+            <Link to='/home' className='hover:text-orange_01 transiton-all ease-in-out duration-300 text-white dark:text-black dark:hover:text-orange_03 px-2 text-md font-bold'>Home</Link>
             <Link to='/postagens' className='hover:text-orange_01 transiton-all ease-in-out duration-300 text-white dark:text-black dark:hover:text-orange_03 px-2 text-md font-bold'>Postagens</Link>
             <Link to='/temas' className='hover:text-orange_01 transiton-all ease-in-out duration-300 text-white dark:text-black dark:hover:text-orange_03px-2 text-md font-bold'>Temas</Link>
             <Link to='/cadastroTema' className='hover:text-orange_01 transiton-all ease-in-out duration-300 text-white dark:text-black dark:hover:text-orange_03 text-md font-bold'>Cadastrar Tema</Link>
@@ -141,16 +141,15 @@ function Navbar() {
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black dark:bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white">
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black dark:bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white transition-all ease-in-out duration-600">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+              <Link to='/home' className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}><span className="sr-only">Your Company</span>
                 <img
-                  className=" w-auto"
+                  className="h-22 w-auto"
                   src={jayLogo}
                   alt=""
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-white dark:text-black"
@@ -172,9 +171,10 @@ function Navbar() {
                       {item.name}
                     </a>
                   ))} */}
+                  <Link to='/home' onClick={() => setMobileMenuOpen(false)} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Home</Link>
                   <Link to='/postagens' onClick={() => setMobileMenuOpen(false)} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Postagens</Link>
                   <Link to='/temas' onClick={() => setMobileMenuOpen(false)} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Temas</Link>
-                  <Link to='/cadastroTemas' onClick={() => setMobileMenuOpen(false)} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Cadastrar Tema</Link>
+                  <Link to='/cadastroTema' onClick={() => setMobileMenuOpen(false)} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Cadastrar Tema</Link>
                   <Link to='/perfil' onClick={() => setMobileMenuOpen(false)} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Perfil</Link>
                   <Link to='' onClick={logout} className='py-2 text-md font-bold active:text-orange_03 text-white dark:text-black'>Sair</Link>
                 </div>

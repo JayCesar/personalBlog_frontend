@@ -9,3 +9,14 @@
     display: block;
     margin: 0 auto;
 }
+
+.fundoHome{
+    background-image: url(../../assets/ceuEstrelado2.jpg);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+    opacity: 4.0;
+}
