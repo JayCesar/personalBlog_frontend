@@ -104,7 +104,7 @@ function FormularioTema() {
 
       <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do tema</label>
+          <label htmlFor="descricao font-bold" className='text-black dark:text-white'>Descrição do tema</label>
           <input
             type="text"
             placeholder="Descrição"
@@ -115,7 +115,7 @@ function FormularioTema() {
           />
         </div>
         <button
-          className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
+          className="rounded text-slate-100 bg-orange_01 hover:bg-orange_03 transition-all ease-in-out duration-300 hover:text-white w-1/2 py-2 mx-auto block"
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}
