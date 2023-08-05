@@ -4,6 +4,8 @@ import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
 import { toastAlerta } from '../../utils/toastAlerta'
+import jayLogo from '../../assets/jayBlogLogo.svg'
+import videoBg from '../../assets/video.mp4'
 
 function Cadastro() {
 
@@ -70,79 +72,81 @@ function Cadastro() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        <div className="fundoCadastro hidden lg:block"></div>
-        <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
-          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+      <div className="bg-black flex justify-center h-screen place-items-center font-bold">
+      <video src={videoBg} autoPlay loop muted className="flex justify-center h-screen w-full place-items-center font-bold"/>
+      <div className="absolute w-[310px] bg-black sm:w-[400px] cardForm md:w-[500px] bg-opacity-70 border-none p-6 lg:p-10 rounded-[25px] shadow-lg shadow-black-800">
+        <form className='flex justify-center items-center flex-col gap-2 w-full' onSubmit={cadastrarNovoUsuario}>
+          <img src={jayLogo} alt="" className='w-[150px]' />
           <div className="flex flex-col w-full">
-            <label htmlFor="nome">Nome</label>
+            <label htmlFor="nome" className='text-orange_01'>Nome</label>
             <input
               type="text"
               id="nome"
               name="nome"
               placeholder="Nome"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
               value={usuario.nome} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuario</label>
+            <label htmlFor="usuario" className='text-orange_01'>Usuario</label>
             <input
               type="text"
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
               value={usuario.usuario} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="foto">Foto</label>
+            <label htmlFor="foto" className='text-orange_01'>Foto</label>
             <input
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="URL da foto"
+              className="w-full border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
               value={usuario.foto} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
+            <label htmlFor="senha" className='text-orange_01'>Senha</label>
             <input
               type="password"
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
               value={usuario.senha} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha">Confirmar Senha</label>
+            <label htmlFor="confirmarSenha" className='text-orange_01'>Confirmar Senha</label>
             <input
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Confirmar Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="w-full border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
               value={confirmaSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
             />
           </div>
-          <div className="flex justify-around w-full gap-8">
-            <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={back}>
+          <div className="flex justify-around w-full gap-4 mt-2">
+            <button className='rounded text-white bg-orange_01 hover:bg-red-600 w-1/2 py-2 transition-all duration-[0.5s]' onClick={back}>
               Cancelar
             </button>
-            <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2' type='submit'>
+            <button className='rounded text-white bg-orange_03 transition-all duration-[0.5s] hover:bg-green-600 w-1/2 py-2' type='submit'>
               Cadastrar
             </button>
           </div>
         </form>
+      </div>
       </div>
     </>
   )
