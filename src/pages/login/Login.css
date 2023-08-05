@@ -10,9 +10,28 @@
 .fundoLogin2 {
     background-image: url(../../assets/login2.jpg);
     background-repeat: no-repeat;
-
-
     background-size: cover;
     background-position: center;
+}
 
+video{
+    width: 100%;
+    object-fit: cover;
+}
+
+.cardForm {
+    width: 200px;
+    background-color: black;
+}
+
+/* @media screen and (min-width: 360px) and (max-width: 766px) {
+    .cardForm {
+        width: 900px;
+        background-color: black;
+    }
+} */
+
+.cardForm {
+    width: 900px;
+    background-color: black;
 }

@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { RotatingLines } from "react-loader-spinner";
 import jayLogo from '../../assets/jayBlogLogo.svg'
+import videoBg from '../../assets/video.mp4'
 
 /* Test */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -59,35 +60,36 @@ function Login() {
 
   return (
     <>
-      <div className="bg-black_01 grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        <div className="flex bg-slate-100 border-[1px] p-6 lg:p-10 rounded-[3%] shadow-lg shadow-black-500/50 dark:bg-black_01">
+      <div className="bg-black flex justify-center h-screen place-items-center font-bold">
+      <video src={videoBg} autoPlay loop muted className="flex justify-center h-screen w-full place-items-center font-bold" />
+        <div className="absolute w-[310px] sm:w-[400px] cardForm md:w-[500px] bg-slate-100 bg-opacity-90 dark:border-none p-6 lg:p-10 rounded-[3%] shadow-lg shadow-black-800 dark:bg-black dark:bg-opacity-80">
         <form
           className="flex justify-center items-center flex-col gap-4 w-full"
           onSubmit={login}
         >
           <img src={jayLogo} alt="" className='w-[150px] mb-2' />
-          <div className="flex flex-col w-full text-black">
+          <div className="flex flex-col w-full text-black dark:text-white">
             <label htmlFor="usuario">Usuário</label>
             <input
               type="text"
               id="usuario"
               name="usuario"
               placeholder="user@gen.com"
-              className="w-[280px] md:w-[390px] lg:w-[400px] mt-2 border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
+              className="w-full mt-2 border-2 border-slate-700 rounded p-2 ring-2 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_02"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
               }
             />
           </div>
-          <div className="flex flex-col w-full text-black">
+          <div className="flex flex-col w-full text-black dark:text-white">
             <label htmlFor="senha">Senha</label>
             <input
               type="password"
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="w-[280px] md:w-[390px] lg:w-[400px] mt-2 border-2 border-slate-700 rounded p-2 ring-1 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_01"
+              className="w-full mt-2 border-2 border-slate-700 rounded p-2 ring-1 ring-inset ring-orange_03 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow_01"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -134,8 +136,9 @@ function Login() {
           </div>
         </form>
         </div>
-        <div className="fundoLogin hidden lg:block"></div>
       </div>
+      {/* <div className="fundoLogin hidden lg:block"></div> */}
+      
     </>
   );
 }
