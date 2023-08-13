@@ -79,7 +79,7 @@ function Footer() {
               </div>
             </div>
             <hr className="my-6sm:mx-auto border-gray-700 lg:my-8" />
-            <div className="sm:flex sm:items-center sm:justify-center">
+            <div className="sm:flex sm:items-center sm:justify-left text-center">
               <span className="text-sm sm:text-center text-gray-400">
                 © 2023{" "}
                 <a href="/home" className="hover:underline">
