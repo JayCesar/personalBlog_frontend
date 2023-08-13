@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Login from './pages/login/Login';
@@ -29,9 +26,9 @@ function App() {
       <ToastContainer />
         <BrowserRouter>
         <Navbar />
-          <div className='min-h-[100vh] dark:bg-black translate-all ease-in-out duration-300'>
+          <div className='min-h-[100vh] translate-all ease-in-out duration-300 bg-black dark:bg-white'>
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/home" element={<Home />} />

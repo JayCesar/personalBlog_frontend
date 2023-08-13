@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
@@ -102,9 +102,9 @@ function FormularioTema() {
         {id === undefined ? 'Cadastre um novo tema' : 'Editar tema'}
       </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+      <form className="w-full px-4 lg:w-1/2 flex flex-col gap-4 mt-20" onSubmit={gerarNovoTema}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao font-bold" className='text-black dark:text-white'>Descrição do tema</label>
+          <label htmlFor="descricao font-bold" className='font-bold dark:text-black text-white'>Descrição do tema</label>
           <input
             type="text"
             placeholder="Descrição"
@@ -114,10 +114,15 @@ function FormularioTema() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <button
+        {/* <button
           className="rounded text-slate-100 bg-orange_01 hover:bg-orange_03 transition-all ease-in-out duration-300 hover:text-white w-1/2 py-2 mx-auto block"
           type="submit"
         >
+          {id === undefined ? 'Cadastrar' : 'Editar'}
+        </button> */}
+
+        <button className='text-center w-full sm:text-sm md:text-md bg-white bg-gradient-to-br from-orange_01 to-orange_02 hover:bg-gradient-to-bl focus:ring-4 
+         focus:outline-none transition-all ease-in-out duration-300 hover:text-white py-3 px-4 font-bold'  type="submit">
           {id === undefined ? 'Cadastrar' : 'Editar'}
         </button>
       </form>
